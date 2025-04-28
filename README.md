@@ -26,7 +26,8 @@ return 0;
 }
 ```
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/e5af8079-54da-44a1-a23b-39e3839e85a6)
+![image](https://github.com/user-attachments/assets/b8bee6d4-632b-48e2-8c64-936be83cde17)
+
 
 
 
@@ -79,8 +80,9 @@ printf("%d is not a positive number.\n", A);
 return 0;
 }
 ```
-# OUTPUT:
-![image](https://github.com/user-attachments/assets/58ecf1d5-4807-457e-9c7f-5f0bad27fea3)
+##output:
+![image](https://github.com/user-attachments/assets/3bd4f764-c1f7-4f10-9e47-ea9fd361bc0b)
+
 
 
 
@@ -116,22 +118,23 @@ Write a program to find minimum between two fraction numbers using conditional o
 #include <stdio.h>
 int main()
 {
-int num1, den1, num2, den2;
-float frac1, frac2, min;
-printf("Enter numerator and denominator of first fraction: ");
-scanf("%d%d", &num1, &den1);
-printf("Enter numerator and denominator of second fraction: ");
-scanf("%d%d", &num2, &den2);
-frac1 = (float)num1 / den1;
-frac2 = (float)num2 / den2;
-min = (frac1 < frac2) ? frac1 : frac2;
-printf("Minimum value between the two fractions is: %.2f\n", min);
+int a,b;
+scanf("%d%d",&a,&b);
+if (a<b)
+{
+printf("Minimum between %d and %d is %d",a,b,a);
+}
+else
+{
+printf("Minimum between %d and %d is %d",a,b,b);
+}
 return 0;
 }
 
 ```
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/a0ec04df-5f52-4451-a5ff-06a7f5e2b708)
+![image](https://github.com/user-attachments/assets/2338a9bb-607d-4ad6-8ab4-fb5ab959602e)
+
 
 
 
@@ -163,20 +166,17 @@ Write a C program to check whether the input value is equal to 1 using simple if
 ## PROGRAM:
 ```
 #include <stdio.h>
-int main() {
-int value;
-printf("Enter a value: ");
-scanf("%d", &value);
-if (value == 1) {
-printf("The input value is equal to 1.\n");
-} else {
-printf("The input value is not equal to 1.\n");
+int main(){
+int a;
+scanf("%d",&a);
+if(a==1)
+printf("TRUE");
 }
-return 0;
-}
+
 ```
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/6ea80b9a-8d3d-47af-bb22-47102095c166)
+![image](https://github.com/user-attachments/assets/05bec06a-b715-4167-a15c-0ca3c4df9318)
+
 
 
 
@@ -213,40 +213,31 @@ c.	Else if percentage >= 36: Print “Division = Pass”
 ## PROGRAM:
 ```
 #include <stdio.h>
+#include <string.h>
 int main()
 {
-int m1, m2, m3;
-float tot, per;
-printf("Enter marks of three subjects: ");
-scanf("%d%d%d", &m1, &m2, &m3);
-tot = m1 + m2 + m3;
-per = tot / 3;
-printf("Total Marks = %.2f\n", tot);
-printf("Percentage = %.2f\n", per);
-if (m1 >= 40 && m2 >= 40 && m3 >= 40)
-{
-if (per >= 60)
-{
-printf("Division = First\n");
-}
-else if (per >= 48)
-{
-printf("Division = Second\n");
-}
-else if (per >= 36)
-{
-printf("Division = Pass\n");
-}
-}
+int phy,che,ca,total;
+float per;
+char div[10];
+scanf("%d%d%d",&phy,&che,&ca);
+total = phy+che+ca;
+per = total/3.0;
+if (per>=60)
+strcpy(div,"First");
+else if (per<60&&per>=48)
+strcpy(div,"Second");
+else if (per<48&&per>=36)
+strcpy(div,"Pass");
 else
-{
-printf("Division = Fail\n");
-}
+strcpy(div,"Fail");
+printf("Total Marks = %d\nPercentage = %5.2f\nDivision = %s\n",total
 return 0;
 }
+
 ```
 ## OUTPUT:
-![image](https://github.com/user-attachments/assets/243abe17-6784-4a93-ade5-f62e3d9a023a)
+![image](https://github.com/user-attachments/assets/83ba9391-e889-471b-b45f-bdc3c579c6a5)
+
 
 ## RESULT:
 The program successfully takes three subject marks, calculates the total and percentage, and correctly determines the division based on predefined grading logic.
